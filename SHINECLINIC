@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>Shine Clinic</title> 
+		<style>
+		
+		input[type="number"], input[type="text"], input[type="date"], input[type="email"], input[type="tel"], select  {
+		width:98%;
+		}
+
+		.split {
+		height: 100%;
+		width: 50%;
+		position: fixed;
+		overflow: scroll;
+		z-index: 1;
+		top: 0;
+		}
+		  
+		.left {	
+		    left: 0;
+	        /* Fill the attribute and value */
+		}
+		
+		.right {
+		    right: 0;
+		    background-color: #1AA3FF;
+		    width: 60%;
+		    padding: 10px;
+		    /* Fill the attribute and value */
+		}
+		
+		#image{
+		    width: 90%;
+		    height: 50%;
+		    margin-top: 25%;
+		    
+		    /* Fill the attribute and value */
+		}
+		h3{
+		    text-align: center;
+		    font-size: 20px;
+		    font-family: Georgia;
+		    border-radius: 6px;
+		    padding: 5px;
+		    
+           /* Fill the attribute and value */
+		}
+		
+		table, h3{
+	        /* Fill the attribute and value */
+		    border: 3px solid #ffffff;
+		    border-spacing: 2px;
+		    width: 97%;
+		}
+		
+		td{
+	        /* Fill the attribute and value */
+		    border: 1px solid #ffffff;
+		    border-spacing: 5px;
+		    color: #6600FF;
+		    background-color: #E6E6E6;
+		    
+		    
+		}
+		   
+		#submit,h3{	
+		    color: #C21807;
+		    font-weight: bold;
+		    background-color: #FFFFFF;
+		    /* Fill the attribute and value */
+		}
+		
+		table,td,#submit{
+		    font-family: Georgia;
+		    font-size: 15px;
+		    border-radius: 6px;
+		    padding: 5px;
+		    
+		    /* Fill the attribute and value */
+		}
+			
+		#submit:hover {      
+    		background-color: #C21807; 
+    		color:#FFFFFF; 
+		}
+		
+		.b{
+		    color: #6600FF;
+		    /* Fill the attribute and value */
+		}
+			
+		.c{
+		    color: #C21807;
+		    font-size: 15px;
+		    font-family: Georgia;
+		    font-weight: bold;
+		    /* Fill the attribute and value */
+		}
+
+		.d{
+		    border: 0px;;
+		}
+		</style>
+	</head>
+	
+<body>
+<script>
+			function show_value(x){
+				document.getElementById("demo").innerHTML=x;
+			}
+			function setDisable(){
+				if(document.getElementById('cash').checked==true){
+					document.getElementById('cnumber').disabled=true;
+					document.getElementById('cvvnumber').disabled=true;
+				}
+				else if(document.getElementById('card').checked==true){
+					document.getElementById('cnumber').disabled=false;
+					document.getElementById('cvvnumber').disabled=false;
+				}
+			}
+</script>
+
+<div class="split left"><img src="SHINE.png" id="image"></div>
+<div class="split right">
+    
+<h3>Shine Clinic</h3>
+<table>
+	<tr class="d">
+	    <td class="d"><a href="#admission" id="admission_info"<!-- Fill the code to link to admission information --> class="b">Admission-info</a></td>
+	    <td class="d"><a href="#personal" id="personal_info"<!-- Fill the code to link to personal information --> class="b">Personal-info</a></td>
+	    <td class="d"><a href="#payment" id="payment_info"<!-- Fill the code to link to payment information --> class="b">Payment-info</a></td>
+	</tr>
+	
+	<tr>
+	    <td colspan="3" class="c" id="admission">Admission Information</td>
+	</tr>
+	
+	<tr>
+		<td>Date of Admission: <br/><input type="date" id="dateofadmission" required="required"><!-- Fill the code for date of admission --></td>
+		<td>Select the admission type<br/><select id="adtype" required>
+		    <option value="Select..">Select..</option>
+		    <option value="New Admission">New Admission</option>
+		    <option value="Already Have">Already Have</option>
+		</select><!-- Fill the code for dropdown to select admission type --></td>
+		<td>Admission For<br/><select id="adfor" required>
+		    <option value="Select..">Select..</option>
+		    <option value="Ear">Ear</option>
+		    <option value="Nose">Nose</option>
+		    <option value="Throat">Throat</option>
+		    <option value="General Checkup">General Checkup</option>
+		    
+		</select><!-- Fill the code for dropdown to select admission for --></td>
+	</tr>
+	
+	<tr>
+		<td colspan="3" >**Select if you have any of the following below</td>
+	</tr>
+	<tr>
+		<td class="d"><input type="checkbox" id="cold" name="health"><!-- Fill the code for cold-->Cold</td> 	
+		<td class="d"><input type="checkbox" id="fever" name="health"><!-- Fill the code for Fever-->Fever</td>
+		<td class="d"><input type="checkbox" id="cough" name="health"><!-- Fill the code for Cough-->Cough</td> 
+	</tr>
+	<tr>
+		<td class="d"><input type="checkbox" id="diapedesis" name="health"><!-- Fill the code for Diapedesis-->Diapedesis</td> 
+		<td class="d"><input type="checkbox" id="blood pressure" name="health"><!-- Fill the code for Blood Pressure-->Blood Pressure</td>
+		<td class="d"><input type="checkbox" id="heavy surgery" name="health"><!-- Fill the code for Heavy Surgery-->Heavy Surgery</td> 	
+	</tr>
+	<tr>
+	    <td colspan="3" class="c" id="personal">Personal Information</td>
+	</tr>
+	
+	<tr>
+        <td>Patient Name</td>
+        <td colspan="2"><input type="text" id="pname" placeholder="Enter the patient name" pattern="[a-zA-Z\s]" required="required"><!-- Fill the code for Customer Name --></td>
+    </tr>
+
+	<tr>
+       <td>Phone Number</td>
+	   <td colspan="2"><input type="text" id="phno" placeholder="Enter the phone number" pattern="[789]{1}[0-9]{9}" maxlength="10" minlength="10" required="required"><!-- Fill the code for Phone Number --></td>
+    </tr>
+	
+	<tr>
+		<td>Email ID</td>
+	    <td colspan="2"><input type="email" id="email" placeholder="Enter the email id" required="required"><!-- Fill the code for Email ID --></td>
+    </tr> 
+	
+	<tr>
+		<td>Age</td>
+	    <td colspan="2"><input type="number" id="age" placeholder="Enter the age" required="required"><!-- Fill the code for Age--></td>
+    </tr>
+	
+	<tr>
+		<td>Address</td>
+	    <td colspan="2"><textarea id="address" rows="4" cols="80" placeholder="Enter the age" required="required"></textarea><!-- Fill the code for Address --></td>
+    </tr>
+	
+	<tr>
+		<td colspan="3" class="c" id="payment">Payment Information</td>
+    </tr>
+
+	<tr class="d">
+	<td>Select the payment type:</td>
+		<td class="d"><input type="radio" id="card" name="ptype" <!-- Fill the code for Card--> onclick="setDisable()" required/>Card</td> 	
+		<td class="d"><input type="radio" id="cash" name="ptype" <!-- Fill the code for Cash--> onclick="setDisable()" required/>Cash</td> 
+	</tr>
+	<tr>
+		<td>Card Number</td>
+		<td colspan="2"><input type="text" placeholder="Enter the card number" id="cnumber" minlength="16" maxlength="16" required><!-- Fill the code for Card Number--></td>
+	</tr>
+	<tr>
+		<td>Cvv Number</td>
+		<td colspan="2"><input type="text" id="cvvnumber" placeholder="Enter the cvv number" minlength="3" maxlength="3" required><!-- Fill the code for Cvv Number--></td>
+	</tr>
+ 
+</table>
+<br/>
+<p><input type="button" value="CONFIRM" id="submit"><!-- Fill the code for Submit --></p>
+</div>
+
+</body>
+</html>
